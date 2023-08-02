@@ -8,12 +8,14 @@
     </p>
     </header>
 
-    <form id="description" method="post" action="????">
+
+    <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6">
         @csrf
+        @method('patch')
         <div>
-            <x-input-label for="description"/>
-            <x-text-input id="description" name="description" type="text" class="mt-1 block w-full" />
-            {{-- <x-input-error class="mt-2" :messages="$errors->get('description')" /> --}}
+        <x-input-label for="description" :value="__('Description')" />
+            <x-text-input id="description" name="description" type="text" class="mt-1 block w-full" :value="old('description', $user->description)"/>
+            <x-input-error class="mt-2" :messages="$errors->get('description')" /> 
         </div>
         
         <div class="flex items-center gap-4">

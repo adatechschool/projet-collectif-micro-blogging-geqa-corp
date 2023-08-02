@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Route::post('/profile',function(){
+//     User::edit([
+//         'description'=>request('description')
+//     ]);
+//         return redirect('/profile');
+// });
 
 
 Route::get('/dashboard', function () {
