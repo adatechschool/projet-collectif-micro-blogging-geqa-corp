@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Posts;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PostController;
@@ -19,7 +20,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+Route::get('/posts', function () {
+    return view('index');
+});
 
-Route::post('/posts', [PostController::class, 'store'])->name('store.index');
+Route::post('/posts', function () {
+    $post = new Posts();
+    $post->title = request('title');
+    $post->content = request('content');
+    $post->save();
+});
 
+
+
+
+
+
+
+
+// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+// Route::post('/posts', [PostController::class, 'store'])->name('store.index');

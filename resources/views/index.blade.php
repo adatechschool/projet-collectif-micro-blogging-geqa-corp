@@ -9,31 +9,24 @@
 </head>
 <body>
     <!-- posts/index.blade.php -->
-   <h2>Formulaire de Connexion à la Base de Données</h2>
-    <form method="post" action="/posts">
-       
-        <label for="nom">titre  :</label>
+   <form action="/posts" method="POST">
         @csrf
-        <input type="text" id="titre" name="titre" required><br><br>
-
-        <label for="email">post :</label>
-        <input type="text" id="text" name="text" required><br><br>
-
-        <label for="message">Message :</label>
-        <textarea type="text" id="message" name="message" required></textarea><br><br>
-
-        <input type="submit" value="Envoyer">
+        <label for="title">Title : </label>
+        <input type="text" id="title" name="title">
+        <label for="content">Content : </label>
+        <input type="text" id="content" name="content">
+        <button>Envoyer!</button>
     </form>
 
-    @foreach ($posts as $post)
+    {{-- @foreach ($posts as $post)
     <div>
         <h2>{{ $post->content_post }}</h2>
         <p>{{ $post->description }}</p>
         <p>{{ $post->message }}</p>
         {{-- <p>User: {{ $user->username }}</p>--}}
         
-    </div>
-@endforeach
+    {{-- </div> --}}
+    {{-- @endforeach --}}
 
 </body>
 </html>
