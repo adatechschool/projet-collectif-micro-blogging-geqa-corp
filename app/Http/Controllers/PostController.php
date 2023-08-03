@@ -18,17 +18,14 @@ class PostController extends Controller
     {
         $request->validate([
             'titre' => 'required',
-            'text' => 'required',
+            'post' => 'required',
             'message' => 'required',
         ]);
+       
 
-
-        $post = new Posts();
-        $post->titre = $request->input('titre');
-        $post->text = $request->input('text');
-        $post->message = $request->input('message');
-        $post->save();
-    
+       
+        
+        
 
         return redirect()->route('index');
     }

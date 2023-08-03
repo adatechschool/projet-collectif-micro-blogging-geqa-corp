@@ -10,7 +10,7 @@ class Posts extends Model
 {
     protected $fillable = [
         'titre',
-        'text',
+        'post',
         'message'
     ];
 
