@@ -8,11 +8,15 @@ use App\Models\User;
 
 class Posts extends Model
 {
-    protected $fillable = ['content_post','description','user_id'];
+    protected $fillable = [
+        'titre',
+        'text',
+        'message'
+    ];
 
     public function user()
     {
-        
+
         return $this->belongsTo(User::class);
     }
 }

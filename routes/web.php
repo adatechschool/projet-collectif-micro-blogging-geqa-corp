@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
 use App\Http\Controllers\PostController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,3 +20,6 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+Route::post('/posts', [PostController::class, 'store'])->name('store.index');
+
