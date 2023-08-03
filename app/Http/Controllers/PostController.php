@@ -13,7 +13,7 @@ class PostController extends Controller
         return view('index', compact('posts'));
     }
 
-    public function store(Request $request)
+   /*  public function store(Request $request)
 
     {
         $request->validate([
@@ -21,12 +21,12 @@ class PostController extends Controller
             'post' => 'required',
             'message' => 'required',
         ]);
-       
+        */
 
        
         
         
 
-        return redirect()->route('index');
-    }
+    /*     return redirect()->route('index');
+    } */
 }

@@ -19,15 +19,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/posts', function(){
+Route::get('/posts', function () {
     return view('index');
 });
 
-Route::post('/posts',function(){
-$post = new Posts();
-$post->titre = request('titre');
-$post->post = request('post');
-$post->message =request('message');
-$post->save();
-
+Route::post('/posts', function () {
+    Posts::create([
+        'titre' => request('titre'),
+        'post' => request('post'),
+        'message' => request('message')
+    ]);
 });
