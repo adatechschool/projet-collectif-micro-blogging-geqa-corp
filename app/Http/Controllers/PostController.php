@@ -7,24 +7,10 @@ use App\Models\Posts;
 
 class PostController extends Controller
 {
-    public function index()
+    //
+    public function allPosts()
     {
-        $posts = Posts::all();
-        return view('index', compact('posts'));
+        $posts = Posts::get();
+        return view('postsPage', compact('posts'));
     }
-
-    // public function store(Request $request)
-    // {
-    //     $request->validate([
-    //         'titre' => 'required',
-    //         'text' => 'required',
-    //         'message' => 'required',
-    //     ]);
-
-
-
-
-
-    //     return redirect()->route('index');
-    // }
 }

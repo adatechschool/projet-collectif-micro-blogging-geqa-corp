@@ -8,15 +8,22 @@ use App\Models\User;
 
 class Posts extends Model
 {
+    use HasFactory;
     protected $fillable = [
-        'titre',
-        'text',
-        'message'
+        'title',
+        'content'
     ];
 
-    public function user()
-    {
 
-        return $this->belongsTo(User::class);
-    }
+    // protected $fillable = [
+    //     'titre',
+    //     'text',
+    //     'message'
+    // ];
+
+    // public function user()
+    // {
+
+    //     return $this->belongsTo(User::class);
+    // }
 }

@@ -25,11 +25,14 @@ Route::get('/posts', function () {
 });
 
 Route::post('/posts', function () {
-    $post = new Posts();
-    $post->title = request('title');
-    $post->content = request('content');
-    $post->save();
+    Posts::create([
+        'title' => request('title'),
+        'content' => request('content')
+    ]);
+    return redirect('/posts');
 });
+
+Route::get('/showPosts', [PostController::class, 'AllPosts'])->name('postsPage');
 
 
 
