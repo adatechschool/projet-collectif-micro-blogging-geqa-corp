@@ -13,20 +13,20 @@ class PostController extends Controller
         return view('index', compact('posts'));
     }
 
-   /*  public function store(Request $request)
-
+    public function store(Request $request)
     {
         $request->validate([
             'titre' => 'required',
             'post' => 'required',
-            'message' => 'required',
+            'message' => 'required'
         ]);
-        */
 
-       
-        
-        
+        Posts::create([
+            'titre' => request('titre'),
+            'post' => request('post'),
+            'message' => request('message')
+        ]);
 
-    /*     return redirect()->route('index');
-    } */
+        return redirect('/posts');
+    }
 }

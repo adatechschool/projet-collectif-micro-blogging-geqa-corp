@@ -23,10 +23,15 @@ Route::get('/posts', function () {
     return view('index');
 });
 
-Route::post('/posts', function () {
-    Posts::create([
-        'titre' => request('titre'),
-        'post' => request('post'),
-        'message' => request('message')
-    ]);
-});
+Route::post('/posts', [PostController::class, 'store']); // Utilisez le contrôleur pour la route POST
+
+
+
+
+
+
+
+
+// Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+
+// Route::post('/posts', [PostController::class, 'store'])->name('store.index');

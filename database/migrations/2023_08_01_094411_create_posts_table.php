@@ -13,15 +13,10 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
-            $table->string('titre');
-            $table->string('post');
-            $table->string('message');
+            $table->string('titre'); // Remplacez 'title' par 'titre'
+            $table->text('post'); // Remplacez 'content' par 'post'
+            $table->text('message');
             $table->timestamps();
-            // $table->unsignedBigInteger('user_id');
-
-            //$table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-
         });
     }
 
@@ -32,4 +27,4 @@ class CreatePostsTable extends Migration
     {
         Schema::dropIfExists('posts');
     }
-};
+}

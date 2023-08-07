@@ -8,7 +8,8 @@ use App\Models\User;
 
 class Posts extends Model
 {
-    protected $fillable = [
+    use HasFactory;
+   protected $fillable = [
         'titre',
         'post',
         'message'
