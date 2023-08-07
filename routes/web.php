@@ -1,5 +1,4 @@
 <?php
-
 use App\Models\Posts;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
@@ -24,6 +23,7 @@ Route::get('/posts', function () {
     return view('index');
 });
 
+<<<<<<< HEAD
 Route::post('/posts', function () {
     Posts::create([
         'title' => request('title'),
@@ -31,6 +31,9 @@ Route::post('/posts', function () {
     ]);
     return redirect('/posts');
 });
+=======
+Route::post('/posts', [PostController::class, 'store']); // Utilisez le contrôleur pour la route POST
+>>>>>>> 5afc39dd61304f8c5800756bbe73187d2125b590
 
 Route::get('/showPosts', [PostController::class, 'AllPosts'])->name('postsPage');
 
